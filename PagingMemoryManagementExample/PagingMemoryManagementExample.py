@@ -23,3 +23,8 @@ class paging_system:
             self.get_from_shelves(book)
         else: 
             print("{book} is not offered here in the library")
+
+    def get_from_shelves(self, book):
+        self.library.remove(book)
+        self.move_to_desk(book)
+        print("{book} is now on the desk!")
