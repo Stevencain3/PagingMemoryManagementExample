@@ -24,7 +24,18 @@ class paging_system:
         else: 
             print("{book} is not offered here in the library")
 
+#getting a book from the sheves 
     def get_from_shelves(self, book):
         self.library.remove(book)
         self.move_to_desk(book)
         print("{book} is now on the desk!")
+
+    def move_to_desk(self, book):
+        if len(self.desk) >= self.desk_size:
+            removed = self.desk.pop(0)
+            print ("desk(RAM) is full. Moving {removed} to the cart (VRAM).")
+            if len(self.cart) >= self.cart_size:
+                removed_cart = self.cart.pop
+                self.desk.append(removed)
+                print("library cart(VRAM) is full. Moving {removed_cart} to the library shelves")
+                self.library.append(removed_cart)
